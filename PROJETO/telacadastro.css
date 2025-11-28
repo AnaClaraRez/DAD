@@ -1,0 +1,182 @@
+/* Reset básico - Mantenha a consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- CABEÇALHO (TOPO) --- */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 80px; 
+    width: auto;
+}
+
+.topo .opcoes {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.topo .opcoes a {
+ color: #003366; text-decoration: none; font-size: 15px; font-weight: 500;
+}
+
+.botao-azul {
+    background-color: #284E9E;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f8f8f8;
+    flex-wrap: wrap;
+}
+
+/* Imagens da campanha (Lado Esquerdo) */
+.imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagens img {
+    width: 580px; /* Um pouco menor para dar espaço ao formulário */
+    border-radius: 10px;
+    margin-left: 90px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- CAIXA DE CADASTRO (Lado Direito) --- */
+.cadastro-box {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 450px; /* Aumentei a largura para acomodar mais inputs */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.logo-dad {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 250px;
+}
+
+.cadastro-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Ícone de ajuda */
+.ajuda {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #284E9E;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.ajuda:hover {
+    color: #1c3570;
+}
+
+/* Estilos do Formulário */
+.cadastro-box label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cadastro-box input,
+.cadastro-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.cadastro-box select {
+    appearance: none; /* Remove a seta padrão em alguns navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%20176.4c-4.5%204.5-10.3%206.8-16.1%206.8s-11.6-2.3-16.1-6.8L146.2%2073.7%2037.6%20176.4c-4.5%204.5-10.3%206.8-16.1%206.8s-11.6-2.3-16.1-6.8-6.8-10.3-6.8-16.1%202.3-11.6%206.8-16.1L130.1%2041.3c4.5-4.5%2010.3-6.8%2016.1-6.8s11.6%202.3%2016.1%206.8L287%20144.2c4.5%204.5%206.8%2010.3%206.8%2016.1s-2.3%2011.6-6.8%2016.1z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+    padding-right: 30px; /* Espaço para o ícone */
+}
+
+/* Botão de Cadastro (Entrar do login, mas aqui é Cadastre-se) */
+.entrar {
+    background-color: #284E9E;
+    color: white;
+    border: none; 
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+
+.entrar:hover {
+    background-color: #1c3570;
+}
+
+/* Link para login */
+.ja-tem-conta {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.ja-tem-conta a {
+    color: #284E9E;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: #001A4E;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+

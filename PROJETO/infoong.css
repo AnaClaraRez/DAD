@@ -1,0 +1,879 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- CABEÇALHO --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    background-color: #2729af;
+    padding: 5px 15px;
+    border-radius: 20px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#greeting-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.menu-icon {
+    color: #ffffff;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.perfil-ong-content {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+}
+
+/* --- BANNER DA ONG --- */
+.ong-banner {
+    background: linear-gradient(135deg, #284E9E 0%, #1c3570 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ong-header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.ong-logo-wrapper {
+    position: relative;
+}
+
+.ong-logo-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ong-header-info {
+    flex-grow: 1;
+    color: white;
+}
+
+.ong-title-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ong-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.verification-icon {
+    color: #FFD700;
+    font-size: 28px;
+}
+
+.ong-location {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.ong-mission {
+    font-size: 18px;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+/* Estatísticas */
+.ong-stats {
+    display: flex;
+    gap: 50px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- AÇÕES E BOTÕES --- */
+.ong-actions-bar {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.primary-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.action-btn {
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.follow-btn {
+    background-color: #284E9E;
+    color: white;
+}
+
+.follow-btn:hover {
+    background-color: #1c3570;
+    transform: translateY(-2px);
+}
+
+.message-btn {
+    background-color: white;
+    color: #284E9E;
+    border: 2px solid #284E9E;
+}
+
+.message-btn:hover {
+    background-color: #f0f7ff;
+}
+
+.email-btn {
+    background-color: white;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+.email-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.secondary-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s;
+    padding: 8px;
+}
+
+.icon-btn:hover {
+    color: #284E9E;
+    transform: scale(1.1);
+}
+
+.favorite-icon {
+    color: #E34F4F;
+}
+
+.warning-btn {
+    background-color: #fff5f5;
+    color: #E34F4F;
+    border: 2px solid #E34F4F;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trans-btn {
+    background-color: #f0f7ff;
+    color: #284E9E;
+    border: 2px solid #284E9E;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- SEÇÃO DE POSTAGENS --- */
+.ong-posts {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.posts-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.donate-btn {
+    background: linear-gradient(135deg, #E34F4F 0%, #c73e3e 100%);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(227, 79, 79, 0.3);
+    transition: all 0.3s;
+}
+
+.donate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(227, 79, 79, 0.4);
+}
+
+.media-filter {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.filter-option {
+    cursor: pointer;
+    color: #999;
+    font-size: 24px;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+
+.filter-option:hover {
+    background-color: #f5f5f5;
+    color: #284E9E;
+}
+
+.filter-option.active {
+    color: #284E9E;
+    background-color: #f0f7ff;
+}
+
+/* Grade de Posts */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: white;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.post-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.post-info {
+    padding: 15px;
+}
+
+.post-description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.post-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* --- SIDEBAR PERFIL (IGUAL À TELA INICIAL) --- */
+/* --- SIDEBAR (REDESENHADA) --- */
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    
+    /* MUDANÇAS AQUI PARA TIRAR A BARRA */
+    overflow-y: auto;       /* Permite rolar se necessário */
+    overflow-x: hidden;     /* Bloqueia rolagem horizontal */
+    scrollbar-width: none;  /* Esconde a barra no Firefox */
+}
+
+/* Esconde a barra no Chrome, Safari e Edge */
+.sidebar-perfil::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, #2729af, #1c1b80); /* Gradiente no header */
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 30px; /* Curva moderna no final do header */
+    border-bottom-right-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.3); /* Borda translúcida */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu {
+    padding: 10px 15px; /* Espaçamento lateral para os botões não encostarem */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre os itens */
+}
+
+/* Item do menu estilo "Pílula" */
+.sidebar-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px; /* Bordas arredondadas nos itens */
+}
+
+.sidebar-item:hover {
+    background-color: #f0f7ff; /* Fundo azul bem clarinho */
+    color: #2729af; /* Texto azul */
+    transform: translateX(5px); /* Move levemente para a direita */
+}
+
+.sidebar-item i {
+    width: 25px;
+    text-align: center;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.sidebar-item:hover i {
+    color: #2729af;
+}
+
+.sidebar-item.active {
+    background-color: #e6f0ff;
+    color: #2729af;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 41, 175, 0.1); /* Sombra suave no ativo */
+    border-left: none; /* Remove a borda antiga */
+}
+
+.sidebar-item.active i {
+    color: #2729af;
+}
+
+/* Área de Sair */
+.sidebar-sair {
+    margin: 20px 15px 30px 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-sair .sidebar-item:hover {
+    background-color: #fff5f5; /* Vermelho bem claro */
+    color: #d32f2f;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-perfil.ativo {
+    right: 0;
+}
+
+.sidebar-header {
+    background-color: #2729af;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-fechar-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-fechar-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-foto-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sidebar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.sidebar-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-editar-foto i {
+    color: #2729af;
+    font-size: 14px;
+}
+
+.sidebar-nome {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar-item:hover {
+    background-color: #D0D0D0;
+}
+
+.sidebar-item.active {
+    background-color: #D0D0D0;
+    border-left: 4px solid #2729af;
+    font-weight: bold;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.sidebar-sair {
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+}
+
+.sidebar-sair .sidebar-item {
+    color: #d32f2f;
+}
+
+.sidebar-sair .sidebar-item i {
+    color: #d32f2f;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .ong-header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ong-stats {
+        justify-content: center;
+    }
+
+    .ong-actions-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .primary-actions,
+    .secondary-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .perfil-ong-content {
+        padding: 20px 15px;
+    }
+
+    .ong-banner {
+        padding: 25px;
+    }
+
+    .ong-title {
+        font-size: 28px;
+    }
+
+    .ong-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .primary-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .posts-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .donate-btn {
+        width: 100%;
+    }
+}
+
+/* ========================================================= */
+/* --- MODO DE ALTO CONTRASTE (PERFIL DA ONG) --- */
+/* ========================================================= */
+
+body.daltonismo-mode {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/* 1. Estrutura e Containers */
+body.daltonismo-mode .header,
+body.daltonismo-mode .perfil-ong-content,
+body.daltonismo-mode .ong-posts,
+body.daltonismo-mode .ong-actions-bar,
+body.daltonismo-mode .sidebar-perfil {
+    background-color: #000000 !important;
+    border-color: #FFFFFF !important;
+}
+
+/* 2. BANNER DA ONG (O topo azul) */
+/* Transformamos em Amarelo para garantir leitura das estatísticas */
+body.daltonismo-mode .ong-banner {
+    background: #FFFF00 !important; /* Fundo Amarelo sólido */
+    border: 4px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+/* Textos dentro do Banner (Pretos para ler no amarelo) */
+body.daltonismo-mode .ong-title,
+body.daltonismo-mode .ong-location,
+body.daltonismo-mode .ong-mission,
+body.daltonismo-mode .stat-value,
+body.daltonismo-mode .stat-label {
+    color: #000000 !important;
+    font-weight: 900 !important;
+}
+
+/* Ícone de verificado */
+body.daltonismo-mode .verification-icon {
+    color: #000000 !important;
+}
+
+/* Logo da ONG no banner */
+body.daltonismo-mode .ong-logo-large {
+    border: 4px solid #000000 !important;
+    background-color: #FFFFFF !important;
+}
+
+/* 3. BARRA DE AÇÕES (Botões de Seguir, Mensagem, Doar) */
+body.daltonismo-mode .ong-actions-bar {
+    border: 2px solid #FFFF00 !important;
+}
+
+/* Botões Principais (Seguir) */
+body.daltonismo-mode .follow-btn {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: 2px solid #FFFFFF !important;
+    font-weight: bold !important;
+}
+
+/* Botões Secundários (Mensagem, Email, Transparência) */
+body.daltonismo-mode .message-btn,
+body.daltonismo-mode .email-btn,
+body.daltonismo-mode .trans-btn,
+body.daltonismo-mode .warning-btn {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .icon-btn {
+    color: #FFFF00 !important;
+}
+
+/* Botão de Doar (Destaque máximo) */
+body.daltonismo-mode .donate-btn {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: 4px solid #FFFFFF !important;
+    box-shadow: 0 0 10px #FFFFFF !important; /* Brilho branco */
+}
+
+/* 4. POSTAGENS DA ONG */
+body.daltonismo-mode .posts-title {
+    color: #FFFF00 !important;
+}
+
+/* Cards de Postagem */
+body.daltonismo-mode .post-card {
+    background-color: #FFFF00 !important; /* Fundo Amarelo */
+    border: 2px solid #FFFFFF !important;
+}
+
+/* Texto dentro do Post */
+body.daltonismo-mode .post-description,
+body.daltonismo-mode .post-stats {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Filtros de Mídia (Ícones acima dos posts) */
+body.daltonismo-mode .filter-option {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .filter-option.active,
+body.daltonismo-mode .filter-option:hover {
+    color: #FFFF00 !important;
+    background-color: #333333 !important;
+}
+
+/* 5. SIDEBAR (Padrão das outras páginas) */
+body.daltonismo-mode .sidebar-item {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .sidebar-item:hover,
+body.daltonismo-mode .sidebar-item.active {
+    background-color: #333333 !important;
+    color: #FFFF00 !important;
+    border: 1px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .sidebar-item i {
+    color: #FFFF00 !important;
+}
+
+/* 6. IMAGENS */
+body.daltonismo-mode img {
+    filter: grayscale(100%) contrast(120%);
+}
+
+/* --- ESTILO DE "SEGUINDO" --- */
+.follow-btn.seguindo {
+    background-color: #28a745 !important; /* Verde Sucesso */
+    border-color: #28a745 !important;
+    color: white !important;
+}
+
+.follow-btn.seguindo:hover {
+    background-color: #218838 !important; /* Verde mais escuro no hover */
+    border-color: #1e7e34 !important;
+}
+
+/* Ajuste para o Modo Alto Contraste (para não ficar verde e sumir no preto) */
+body.daltonismo-mode .follow-btn.seguindo {
+    background-color: #000000 !important; /* Fundo preto */
+    color: #FFFF00 !important; /* Texto amarelo */
+    border: 2px solid #FFFF00 !important;
+    box-shadow: inset 0 0 10px #FFFF00; /* Um brilho interno para indicar que está ativo */
+}

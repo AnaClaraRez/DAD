@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info ONG - DAD.br</title>
+    <link rel="stylesheet" href="infoong.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="telainicial.html" class="back-link">
+                <img src="imagens/DADNO.png" alt="Logo DAD" class="back-logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="telainicial.html">Home</a>
+            <a href="#" id="toggle-alto-contraste">Alto Contraste</a>
+            <a href="#">Quem somos?</a>
+        </nav>
+        
+        <div class="user-profile">
+            <link rel="stylesheet" href="notificacoes.css">
+            <div class="notification-anchor">
+             <i class="fa-solid fa-bell notification"></i>
+         </div>
+            
+            
+            <div class="menu-container">
+                <div class="profile-info"> 
+                    <img src="imagens/usuario.png" alt="Foto de Perfil" class="profile-pic">
+                    <span id="greeting-name">Olá!</span>
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="perfil-ong-content">
+        
+        <!-- BANNER DA ONG -->
+        <section class="ong-banner">
+            <div class="ong-header-content">
+                <div class="ong-logo-wrapper">
+                    <img src="imagens/pet-lovers-logo.png" alt="Logo da ONG" class="ong-logo-large" id="ong-logo">
+                </div>
+                
+                <div class="ong-header-info">
+                    <div class="ong-title-line">
+                        <h1 class="ong-title" id="ong-name">Pet Lovers</h1>
+                        <i class="fa-solid fa-circle-check verification-icon" id="ong-verified-icon" style="display: none;"></i>
+                    </div>
+                    
+                    <p class="ong-location" id="ong-location">
+                        <i class="fa-solid fa-location-dot"></i> Brasília - DF, Taguatinga Norte
+                    </p>
+                    
+                    <p class="ong-mission" id="ong-mission">
+                    </p>
+                </div>
+            </div>
+            
+            <div class="ong-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-followers">3.4k</span>
+                    <span class="stat-label">Seguidores</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-members">32</span>
+                    <span class="stat-label">Membros</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-following">144</span>
+                    <span class="stat-label">Seguindo</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- BARRA DE AÇÕES -->
+        <section class="ong-actions-bar">
+            <div class="primary-actions">
+                <button class="action-btn follow-btn" id="follow-btn">
+                    <i class="fa-solid fa-user-plus"></i> Seguir
+                </button>
+                <button class="action-btn message-btn">
+                    <i class="fa-solid fa-message"></i> Mensagem
+                </button>
+                <button class="action-btn email-btn">
+                    <i class="fa-solid fa-envelope"></i> E-mail
+                </button>
+            </div>
+            
+            <div class="secondary-actions">
+                <button class="icon-btn favorite-icon" id="favorite-icon">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="action-btn warning-btn">
+                    <i class="fa-solid fa-flag"></i> Denúncia
+                </button>
+                <button class="action-btn trans-btn">
+                    <i class="fa-solid fa-file-lines"></i> Transparência
+                </button>
+            </div>
+        </section>
+
+        <!-- POSTAGENS -->
+        <section class="ong-posts">
+            <div class="posts-header">
+                <h2 class="posts-title">Postagens</h2>
+                <button class="donate-btn">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Faça uma doação
+                </button>
+            </div>
+
+             <!-- POSTAGENS -->
+
+            <div class="posts-grid" id="posts-grid-container">
+                <!-- Postagens serão inseridas aqui via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- SIDEBAR PERFIL -->
+    <!-- SIDEBAR PERFIL -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto">
+                <div class="sidebar-editar-foto">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+        
+        <nav class="sidebar-menu">
+
+    <a href="telainicial.html" class="sidebar-item active">
+        <i class="fa-solid fa-house"></i> <span>Tela Inicial</span>
+    </a>
+
+    <a href="minhaconta.html" class="sidebar-item">
+        <i class="fa-solid fa-user"></i>
+        <span>Minha conta</span>
+    </a>
+    
+    <a href="meuperfil.html" class="sidebar-item">
+        <i class="fa-solid fa-id-card"></i>
+        <span>Meu Perfil</span>
+    </a>
+    
+    <a href="historicodoacao.html" class="sidebar-item">
+        <i class="fa-solid fa-history"></i>
+        <span>Histórico de Doações</span>
+    </a>
+    
+    <a href="ongsfavoritas.html" class="sidebar-item">
+        <i class="fa-solid fa-heart"></i>
+        <span>ONGs Favoritas</span>
+    </a>
+
+    <a href="chat.html" class="sidebar-item">
+        <i class="fa-solid fa-comments"></i>
+        <span>Mensagens</span>
+    </a>
+    <a href="todasongs.html" class="sidebar-item"><i class="fa-solid fa-list"></i> <span>Todas as ONGs</span></a>
+</nav>
+        
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+     <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+   <script type="module" src="config.js"></script>
+    
+    <script type="module" src="infoong.js"></script>
+    <script type="module" src="notificacoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postagens - DAD.br</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="telainicial.css"> 
+    <link rel="stylesheet" href="meuperfil.css">
+    
+    <link rel="stylesheet" href="notificacoes.css">
+    
+    <style>
+        /* Ajustes específicos para esta página de detalhe */
+        .container-detalhe {
+            max-width: 600px;
+            margin: 30px auto;
+            padding-bottom: 50px;
+        }
+
+        .feed-header {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+
+        .feed-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .feed-header h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+        }
+
+        .feed-header span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Card do Post (Estilo Feed) */
+        .card-post-feed {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card-post-img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            background-color: #f8f8f8;
+            display: block;
+        }
+
+        .card-post-content {
+            padding: 15px;
+        }
+
+        .card-post-desc {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .card-post-actions {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            display: flex;
+            gap: 20px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .card-post-actions i {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .card-post-actions i:hover { transform: scale(1.1); color: #2729af; }
+
+        .btn-voltar-feed {
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #2729af;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="telainicial.html"><img src="imagens/DADNO.png" alt="Logo DAD" class="back-logo-img"></a>
+        </div>
+        <div class="user-profile">
+            </div>
+
+            <nav class="opcoes-inicial">
+            <a href="telainicial.html">Home</a>
+            <a href="#" id="toggle-alto-contraste">Alto Contraste</a>
+            <a href="#">Quem somos?</a>
+        </nav>
+
+        <div class="perfil">
+              
+            <div class="notification-anchor">
+        <i class="fa-solid fa-bell notificacao"></i>
+        </div>
+            
+            <div class="usuario">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" id="foto-usuario" class="foto-perfil">
+                <span class="nome-usuario" id="nome-usuario">Olá!</span>
+                <i class="fa-solid fa-bars menu-perfil"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-detalhe">
+        <a href="javascript:history.back()" class="btn-voltar-feed">
+            <i class="fa-solid fa-arrow-left"></i> Voltar para o perfil
+        </a>
+
+        <div class="feed-header" id="feed-user-info">
+            <img src="https://placehold.co/50" id="feed-user-foto">
+            <div>
+                <h2 id="feed-user-nome">Carregando...</h2>
+                <span>Ver perfil completo</span>
+            </div>
+        </div>
+
+        <div id="lista-posts-feed">
+            </div>
+    </main>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto">
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+        <nav class="sidebar-menu">
+            </nav>
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <script>
+        const URL_BASE = 'http://localhost:1880';
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. Pega o CPF da URL (ex: detalhepost.html?cpf=123)
+            const params = new URLSearchParams(window.location.search);
+            const targetCpf = params.get('cpf');
+
+            if (!targetCpf) {
+                alert("Usuário não especificado.");
+                window.location.href = 'telainicial.html';
+                return;
+            }
+
+            try {
+                // 2. Busca os dados
+                const res = await fetch(`${URL_BASE}/perfil?t=${Date.now()}`);
+                const perfis = await res.json();
+                
+                // Encontra o usuário dono dos posts
+                const user = Array.isArray(perfis) ? perfis.find(u => u.cpf === targetCpf) : (perfis.cpf === targetCpf ? perfis : null);
+
+                if (user) {
+                    renderizarFeedUsuario(user);
+                } else {
+                    document.querySelector('.container-detalhe').innerHTML = '<p>Usuário não encontrado.</p>';
+                }
+
+            } catch (e) {
+                console.error(e);
+            }
+        });
+
+        function renderizarFeedUsuario(user) {
+            // Preenche cabeçalho
+            const nome = user.nome;
+            const foto = user.foto || 'imagens/usuario.png';
+            
+            document.getElementById('feed-user-nome').textContent = `Posts de ${nome}`;
+            document.getElementById('feed-user-foto').src = foto;
+            
+            // Clique no header volta para o perfil
+            document.getElementById('feed-user-info').onclick = () => {
+                // Verifica se é o próprio usuário ou outro
+                const eu = localStorage.getItem('usuarioLogado');
+                if(eu === user.cpf) window.location.href = 'meuperfil.html';
+                else window.location.href = `perfilpublico.html?cpf=${user.cpf}`;
+            };
+
+            // Renderiza posts
+            const container = document.getElementById('lista-posts-feed');
+            container.innerHTML = '';
+
+            if (user.posters && user.posters.length > 0) {
+                // Inverte para mostrar o mais recente primeiro (opcional)
+                const postsInvertidos = [...user.posters].reverse(); 
+
+                postsInvertidos.forEach(post => {
+                    // Trata se o post é objeto ou string antiga
+                    const imgUrl = post.imagem || post.foto_post || post;
+                    const descricao = post.descricao || post.descricao_post || '';
+                    const curtidas = post.curtidas || 0;
+
+                    const html = `
+                        <div class="card-post-feed">
+                            <div class="card-post-content" style="padding-bottom:10px; border-bottom:1px solid #f0f0f0;">
+                                <strong>${nome}</strong>
+                            </div>
+                            <img src="${imgUrl}" class="card-post-img" onerror="this.src='https://placehold.co/600x400?text=Erro+Imagem'">
+                            <div class="card-post-content">
+                                <div class="card-post-actions">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-regular fa-comment"></i>
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </div>
+                                <div style="margin-top: 10px; font-weight: bold; font-size: 14px;">${curtidas} curtidas</div>
+                                <p class="card-post-desc">
+                                    <strong>${nome.split(' ')[0]}</strong> ${descricao}
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+            } else {
+                container.innerHTML = '<p style="text-align:center; padding:30px;">Este usuário não possui postagens.</p>';
+            }
+        }
+    </script>
+
+    <script type="module" src="config.js"></script>
+    <script type="module" src="telainicial.js"></script>
+    <script type="module" src="notificacoes.js"></script>
+</body>
+</html>

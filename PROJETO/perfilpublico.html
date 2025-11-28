@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Público - DAD.br</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="meuperfil.css">
+    <link rel="stylesheet" href="notificacoes.css">
+    
+    <style>
+        /* Estilos específicos para a página pública */
+        .btn-seguir-publico {
+            background-color: #2729af; 
+            color: white; 
+            border: none; 
+            width: 100%;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-seguir-publico:hover {
+            background-color: #1c1b80;
+        }
+        .btn-seguir-publico.seguindo {
+            background-color: #4CAF50; 
+            border-color: #4CAF50;
+        }
+        .btn-seguir-publico.seguindo:hover {
+            background-color: #45a049;
+        }
+        .btn-historico { display: none; }
+        .post-item { cursor: pointer; transition: transform 0.2s; }
+        .post-item:hover { transform: scale(1.02); }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="telainicial.html">
+                <img src="imagens/DADNO.png" alt="Logo DAD" class="back-logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="telainicial.html"> Home</a>
+              <a href="#" id="toggle-alto-contraste">Alto Contraste</a> 
+            <a href="#">Quem somos?</a>
+        </nav>
+        
+        <div class="user-profile">
+            <div class="notification-anchor">
+          <i class="fa-solid fa-bell notificacao"></i>
+            </div>
+            
+            <div class="menu-container">
+                <div class="profile-info"> 
+                    <img src="imagens/usuario.png" alt="Foto de Perfil" class="profile-pic" id="header-foto">
+                    <span id="greeting-name">Olá!</span>
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="perfil-content">
+        <div class="perfil-header-section">
+            <div class="perfil-header-top">
+                <button class="btn-denuncia" onclick="alert('Denúncia enviada para análise.')">
+                    <i class="fa-solid fa-flag"></i> Denúncia
+                </button>
+            </div>
+
+            <div class="perfil-info-container">
+                <div class="perfil-foto-nome">
+                    <div class="perfil-foto-wrapper">
+                        <img src="" alt="Foto" class="perfil-foto" id="pub-foto">
+                    </div>
+                    <h2 class="perfil-nome" id="pub-nome">Carregando...</h2>
+                </div>
+
+                <div class="perfil-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="pub-seguidores">0</span>
+                        <span class="stat-label">Seguidores</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="pub-seguindo">0</span>
+                        <span class="stat-label">Seguindo</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="pub-doacoes">0</span>
+                        <span class="stat-label">Doações</span>
+                    </div>
+                </div>
+
+                <div class="perfil-actions" style="display: flex; gap: 15px;">
+                    <button class="btn-action btn-seguir-publico" id="btn-seguir-publico">
+                        <i class="fa-solid fa-user-plus"></i> Seguir
+                    </button>
+                    
+                    <button class="btn-action" id="btn-mensagem-publico" style="background: white; color: #2729af; border: 2px solid #2729af; font-weight: bold;">
+                        <i class="fa-solid fa-comment-dots"></i> Mensagem
+                    </button>
+                </div>
+
+                <div class="perfil-descricao">
+                    <h3>Sobre</h3>
+                    <p id="pub-bio">...</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="postagens-section">
+            <div class="postagens-header">
+                <h2>Postagens</h2>
+            </div>
+            <div class="postagens-grid" id="pub-postagens-grid"></div>
+        </section>
+    </main>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto">
+                <div class="sidebar-editar-foto">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+        
+        <nav class="sidebar-menu">
+            <a href="telainicial.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i> <span>Tela Inicial</span>
+            </a>
+            <a href="minhaconta.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i> <span>Minha conta</span>
+            </a>
+            <a href="meuperfil.html" class="sidebar-item">
+                <i class="fa-solid fa-id-card"></i> <span>Meu Perfil</span>
+            </a>
+            <a href="historicodoacao.html" class="sidebar-item">
+                <i class="fa-solid fa-history"></i> <span>Histórico de Doações</span>
+            </a>
+            <a href="ongsfavoritas.html" class="sidebar-item">
+                <i class="fa-solid fa-heart"></i> <span>ONGs Favoritas</span>
+            </a>
+          
+            <a href="chat.html" class="sidebar-item">
+                <i class="fa-solid fa-comments"></i> <span>Mensagens</span>
+            </a>
+            <a href="todasongs.html" class="sidebar-item"><i class="fa-solid fa-list"></i> <span>Todas as ONGs</span></a>
+        </nav>
+        
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+     <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <footer>
+        <div class="rodape">
+            <p>DAD.br</p>
+        </div>
+    </footer>
+    
+    <script type="module" src="config.js"></script> 
+    <script type="module" src="perfilpublico.js"></script> <script src="notificacoes.js"></script>
+
+</body>
+</html>

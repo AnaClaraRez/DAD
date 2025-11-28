@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bate-papo - DAD.br</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="telainicial.html"><img src="imagens/DADNO.png" alt="Logo DAD"></a>
+        </div>
+        
+        <nav class="opcoes-inicial">
+            <a href="telainicial.html">Home</a>
+            <a href="#" id="toggle-alto-contraste">Alto Contraste</a>
+            <a href="#">Quem somos?</a>
+        </nav>
+        
+        <div class="perfil">
+            <i class="fa-solid fa-bell notificacao"></i>
+            <link rel="stylesheet" href="notificacoes.css"> <div class="usuario">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" id="foto-usuario" class="foto-perfil">
+                <span class="nome-usuario" id="nome-usuario">Olá!</span>
+                <i class="fa-solid fa-bars menu-perfil"></i>
+            </div>
+        </div>
+    </header>
+    
+    <main class="chat-container">
+        
+
+        <aside class="chat-sidebar">
+            <div class="search-chat">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Buscar conversa...">
+            </div>
+
+            <div class="contact-list" id="contact-list">
+                <div class="contact-item loading">Carregando conversas...</div>
+            </div>
+        </aside>
+
+        <section class="chat-area">
+
+            <div class="chat-header" id="chat-header" style="display: none;">
+                <img src="" id="chat-avatar" alt="Avatar">
+                <div class="chat-info">
+                    <h3 id="chat-name">Nome do Contato</h3>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+
+            <div class="messages-box" id="messages-box">
+                <div class="empty-chat">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    <h3>Selecione uma conversa</h3>
+                    <p>Escolha um contato à esquerda para começar a conversar.</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area" id="chat-input-area" style="display: none;">
+                <button class="btn-clip"><i class="fa-solid fa-paperclip"></i></button>
+                <input type="text" id="msg-input" placeholder="Digite sua mensagem...">
+                <button class="btn-send" id="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto">
+                <div class="sidebar-editar-foto">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="telainicial.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i> <span>Tela Inicial</span>
+            </a>
+
+            <a href="minhaconta.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Minha conta</span>
+            </a>
+
+            <a href="meuperfil.html" class="sidebar-item">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Meu Perfil</span>
+            </a>
+
+            <a href="historicodoacao.html" class="sidebar-item">
+                <i class="fa-solid fa-history"></i>
+                <span>Histórico de Doações</span>
+            </a>
+
+            <a href="ongsfavoritas.html" class="sidebar-item">
+                <i class="fa-solid fa-heart"></i>
+                <span>ONGs Favoritas</span>
+            </a>
+
+            <a href="chat.html" class="sidebar-item active">
+                <i class="fa-solid fa-comments"></i>
+                <span>Mensagens</span>
+            </a>
+
+            <a href="todasongs.html" class="sidebar-item">
+                <i class="fa-solid fa-list"></i> <span>Todas as ONGs</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item"> <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+     <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+   <script type="module" src="config.js"></script>
+    <script type="module" src="notificacoes.js"></script> <script type="module" src="chat.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* Container pai (onde o sino está) */
+.user-profile, .perfil {
+    position: relative !important; /* OBRIGATÓRIO: Torna este o ponto de referência */
+}
+
+/* Bolinha Vermelha (Badge) */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff3b30;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    z-index: 2001; /* Fica acima do sino */
+    display: none; /* Oculto por padrão */
+}
+
+.notification-badge.ativo {
+    display: flex;
+}
+
+/* --- MENU DE NOTIFICAÇÕES (CORREÇÃO DE FLUTUAÇÃO) --- */
+#notificacoes-container, .notification-dropdown {
+    /* Força o elemento a sair do fluxo da página e flutuar */
+    position: absolute !important; 
+    
+    /* Posiciona logo abaixo do header */
+    top: 50px !important; 
+    
+    /* Alinha à direita do container pai (.perfil) */
+    right: 0 !important; 
+    
+    width: 320px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2); /* Sombra forte para destacar */
+    z-index: 9999 !important; /* Garante que fique ACIMA de tudo */
+    overflow: hidden;
+    display: none; /* Começa oculto */
+    border: 1px solid #eee;
+}
+
+/* Header da Notificação */
+.notif-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    color: #333;
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+/* Lista de Itens */
+.notif-list {
+    max-height: 350px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+/* Barra de rolagem fina */
+.notif-list::-webkit-scrollbar {
+    width: 6px;
+}
+.notif-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+/* Item Individual */
+.notif-item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.notif-item:hover {
+    background-color: #f5f5f5;
+}
+
+.notif-item.nao-lida {
+    background-color: #eeffff; /* Destaque suave para não lidas */
+    border-left: 3px solid #2729af;
+}
+
+.notif-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Não deixa a imagem esmagar */
+}
+
+.notif-content {
+    flex: 1;
+}
+
+.notif-text {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notif-text strong {
+    color: #2729af;
+    font-weight: 600;
+}
+
+.notif-time {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+    display: block;
+}
+
+.empty-notif {
+    padding: 30px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+/* Novo container para o sino para que o badge ancore nele */
+.notification-anchor {
+    position: relative; /* Define este como o ponto de âncora */
+    display: inline-block; /* Garante que o elemento se ajuste ao tamanho do sino */
+}
+
+/* Garante que o sino e o perfil fiquem alinhados */
+.user-profile, .perfil {
+    display: flex; /* Garante alinhamento horizontal */
+    align-items: center;
+    gap: 20px; /* Adiciona espaçamento entre o sino e o perfil */
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.daltonismo-mode #notificacoes-container {
+    background-color: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .notif-header {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+    border-bottom: 1px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .notif-list {
+    background-color: #000000 !important;
+}
+
+body.daltonismo-mode .notif-item {
+    background-color: #000000 !important;
+    border-bottom: 1px solid #333 !important;
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .notif-item:hover {
+    background-color: #222 !important;
+}
+
+body.daltonismo-mode .notif-item.nao-lida {
+    background-color: #111 !important;
+    border-left: 3px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .notif-text, 
+body.daltonismo-mode .notif-time {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .notif-text strong {
+    color: #FFFF00 !important;
+}

@@ -1,0 +1,900 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* --- CABEÇALHO --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    background-color: #2729af;
+    padding: 5px 15px;
+    border-radius: 20px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#greeting-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.menu-icon {
+    color: #ffffff;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.historico-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.historico-header {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+/* --- CARDS DE ESTATÍSTICAS --- */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- LISTA DE DOAÇÕES --- */
+.historico-list-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.list-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: #2729af;
+    color: #2729af;
+}
+
+.filter-btn.active {
+    background: #2729af;
+    border-color: #2729af;
+    color: white;
+}
+
+.historico-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.doacao-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #2729af;
+    transition: all 0.3s;
+}
+
+.doacao-item:hover {
+    background: #f0f7ff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ong-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ong-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ong-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ong-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ong-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.doacao-metodo {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.doacao-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.valor {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.data {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estado vazio */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state i {
+    font-size: 64px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* --- SIDEBAR PERFIL (Estilo Unificado) --- */
+
+/* --- SIDEBAR (REDESENHADA) --- */
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    
+    /* MUDANÇAS AQUI PARA TIRAR A BARRA */
+    overflow-y: auto;       /* Permite rolar se necessário */
+    overflow-x: hidden;     /* Bloqueia rolagem horizontal */
+    scrollbar-width: none;  /* Esconde a barra no Firefox */
+}
+
+/* Esconde a barra no Chrome, Safari e Edge */
+.sidebar-perfil::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, #2729af, #1c1b80); /* Gradiente no header */
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 30px; /* Curva moderna no final do header */
+    border-bottom-right-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.3); /* Borda translúcida */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu {
+    padding: 10px 15px; /* Espaçamento lateral para os botões não encostarem */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre os itens */
+}
+
+/* Item do menu estilo "Pílula" */
+.sidebar-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px; /* Bordas arredondadas nos itens */
+}
+
+.sidebar-item:hover {
+    background-color: #f0f7ff; /* Fundo azul bem clarinho */
+    color: #2729af; /* Texto azul */
+    transform: translateX(5px); /* Move levemente para a direita */
+}
+
+.sidebar-item i {
+    width: 25px;
+    text-align: center;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.sidebar-item:hover i {
+    color: #2729af;
+}
+
+.sidebar-item.active {
+    background-color: #e6f0ff;
+    color: #2729af;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 41, 175, 0.1); /* Sombra suave no ativo */
+    border-left: none; /* Remove a borda antiga */
+}
+
+.sidebar-item.active i {
+    color: #2729af;
+}
+
+/* Área de Sair */
+.sidebar-sair {
+    margin: 20px 15px 30px 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-sair .sidebar-item:hover {
+    background-color: #fff5f5; /* Vermelho bem claro */
+    color: #d32f2f;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-perfil.ativo {
+    right: 0;
+}
+
+.sidebar-header {
+    background-color: #2729af;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-fechar-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-fechar-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-foto-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sidebar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.sidebar-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-editar-foto i {
+    color: #2729af;
+    font-size: 14px;
+}
+
+.sidebar-nome {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar-item:hover {
+    background-color: #D0D0D0;
+}
+
+.sidebar-item.active {
+    background-color: #D0D0D0;
+    border-left: 4px solid #2729af;
+    font-weight: bold;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.sidebar-sair {
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+}
+
+.sidebar-sair .sidebar-item {
+    color: #d32f2f;
+}
+
+.sidebar-sair .sidebar-item i {
+    color: #d32f2f;
+}
+/* --- SIDEBAR --- */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-perfil.ativo {
+    right: 0;
+}
+
+.sidebar-header {
+    background-color: #2729af;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-fechar-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-fechar-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-foto-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sidebar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.sidebar-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-editar-foto i {
+    color: #2729af;
+    font-size: 14px;
+}
+
+.sidebar-nome {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar-item:hover {
+    background-color: #D0D0D0;
+}
+
+.sidebar-item.active {
+    background-color: #D0D0D0;
+    border-left: 4px solid #2729af;
+    font-weight: bold;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.sidebar-sair {
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+}
+
+.sidebar-sair .sidebar-item {
+    color: #d32f2f;
+}
+
+.sidebar-sair .sidebar-item i {
+    color: #d32f2f;
+}
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: #001A4E;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .historico-content {
+        padding: 20px 15px;
+    }
+
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .filter-buttons {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        flex: 1;
+        min-width: 100px;
+        justify-content: center;
+    }
+
+    .doacao-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .doacao-right {
+        width: 100%;
+        text-align: left;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* ========================================================= */
+/* --- MODO DE ALTO CONTRASTE (HISTÓRICO) --- */
+/* ========================================================= */
+
+body.daltonismo-mode {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/* 1. Estrutura e Textos Gerais */
+body.daltonismo-mode .header,
+body.daltonismo-mode .rodape,
+body.daltonismo-mode .sidebar-perfil {
+    background-color: #000000 !important;
+    border-color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .page-title {
+    color: #FFFF00 !important; /* Título amarelo */
+}
+
+body.daltonismo-mode .page-subtitle,
+body.daltonismo-mode .list-header h2 {
+    color: #FFFFFF !important;
+}
+
+/* 2. CARDS DE ESTATÍSTICA (Topo) */
+/* Fundo Amarelo com texto Preto (Destaque máximo) */
+body.daltonismo-mode .stat-card {
+    background-color: #FFFF00 !important;
+    border: 4px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+body.daltonismo-mode .stat-value,
+body.daltonismo-mode .stat-label,
+body.daltonismo-mode .stat-icon {
+    color: #000000 !important;
+    font-weight: 900 !important;
+}
+
+/* 3. LISTA DE DOAÇÕES */
+/* O container principal fica Preto com borda Branca */
+body.daltonismo-mode .historico-list-container {
+    background-color: #000000 !important;
+    border: 2px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+/* CADA ITEM DA LISTA (A doação em si) fica AMARELO */
+body.daltonismo-mode .doacao-item {
+    background-color: #FFFF00 !important;
+    border: 2px solid #FFFFFF !important;
+    border-left: 10px solid #FFFFFF !important; /* Borda esquerda grossa para destaque */
+    margin-bottom: 15px; /* Separação visual */
+}
+
+/* Textos dentro da doação (Pretos para ler no amarelo) */
+body.daltonismo-mode .ong-name,
+body.daltonismo-mode .doacao-metodo,
+body.daltonismo-mode .valor,
+body.daltonismo-mode .data {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Ícone da ONG dentro da lista */
+body.daltonismo-mode .ong-icon {
+    border: 2px solid #000000 !important;
+    background-color: #FFFFFF !important;
+}
+
+/* 4. BOTÕES DE FILTRO */
+body.daltonismo-mode .filter-btn {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .filter-btn.active,
+body.daltonismo-mode .filter-btn:hover {
+    background-color: #FFFF00 !important; /* Inverte ao selecionar */
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* 5. SIDEBAR E IMAGENS */
+body.daltonismo-mode .sidebar-item {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .sidebar-item:hover,
+body.daltonismo-mode .sidebar-item.active {
+    background-color: #333333 !important;
+    color: #FFFF00 !important;
+    border: 1px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .sidebar-item i {
+    color: #FFFF00 !important;
+}
+
+/* Estado vazio (sem doações) */
+body.daltonismo-mode .empty-state h3,
+body.daltonismo-mode .empty-state p,
+body.daltonismo-mode .empty-state i {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode img {
+    filter: grayscale(100%) contrast(120%);
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial - DAD.br</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="telainicial.css">
+    <link rel="stylesheet" href="notificacoes.css"> </head>
+
+<body>
+    <header class="topo-inicial">
+        <div class="logo">
+            <img src="imagens/DADNO.png" alt="Logo DAD - Doações Arrecadações e Distribuições">
+        </div>
+        <nav class="opcoes-inicial">
+            <a href="telainicial.html">Home</a>
+            <a href="#" id="toggle-alto-contraste">Alto Contraste</a>
+            <a href="#">Quem somos?</a>
+        </nav>
+        <div class="perfil">
+            <div class="notification-anchor">
+            <i class="fa-solid fa-bell notificacao"></i>
+            </div>
+            <div class="usuario">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" id="foto-usuario" class="foto-perfil">
+                <span class="nome-usuario" id="nome-usuario">Olá!</span>
+                <i class="fa-solid fa-bars menu-perfil"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo-inicial">
+
+        <section class="barra-busca">
+            <div class="pesquisa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+               <input type="text" placeholder="Pesquisar instituições ou pessoas...">
+            </div>
+
+            <div class="categorias-wrapper">
+                <button class="categorias">
+                    Categorias
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="menu-categorias" id="menu-categorias"></div>
+            </div>
+        </section>
+
+        <section class="resultados-usuarios" id="sec-usuarios" style="display: none;">
+            <div class="usuarios-grid" id="lista-usuarios"></div>
+        </section>
+
+        <section class="sugestoes">
+            <div class="titulo-sugestoes">
+                <h2>Sugestões de ONGs</h2>
+                <a href="todasongs.html">Ver todas as ONG's...</a>
+            </div>
+
+            <div class="carrossel-wrapper">
+                <button class="btn-carrossel btn-carrossel-esq" id="btn-carrossel-esq">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="carrossel-ongs">
+                    <div class="lista-ongs" id="lista-ongs"></div>
+                </div>
+
+                <button class="btn-carrossel btn-carrossel-dir" id="btn-carrossel-dir">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="sugestoes-usuarios">
+            <div class="titulo-sugestoes">
+                <h2>Conecte-se com Pessoas</h2>
+            </div>
+
+            <div class="carrossel-wrapper">
+                <button class="btn-carrossel btn-carrossel-esq" id="btn-users-esq">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="carrossel-ongs" id="carrossel-users-scroll"> 
+                    <div class="lista-usuarios-carrossel" id="lista-usuarios-carrossel"></div>
+                </div>
+
+                <button class="btn-carrossel btn-carrossel-dir" id="btn-users-dir">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="postagens">
+            <h2>Postagens</h2>
+            <div class="postagens-container" id="postagens-container"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <p>DAD.br</p>
+        </div>
+    </footer>
+
+     <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto">
+                <div class="sidebar-editar-foto">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+        
+        <nav class="sidebar-menu">
+
+            <a href="telainicial.html" class="sidebar-item active">
+        <i class="fa-solid fa-house"></i> <span>Tela Inicial</span>
+                </a>
+            <a href="minhaconta.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Minha conta</span>
+            </a>
+            <a href="meuperfil.html" class="sidebar-item">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Meu Perfil</span>
+            </a>
+            <a href="historicodoacao.html" class="sidebar-item">
+                <i class="fa-solid fa-history"></i>
+                <span>Histórico de Doações</span>
+            </a>
+            <a href="ongsfavoritas.html" class="sidebar-item">
+                <i class="fa-solid fa-heart"></i>
+                <span>ONGs Favoritas</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Contatos</span>
+            </a>
+            <a href="todasongs.html" class="sidebar-item"><i class="fa-solid fa-list"></i> <span>Todas as ONGs</span></a>
+        </nav>
+        
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+        
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script type="module" src="config.js"></script>
+<script type="module" src="telainicial.js"></script>
+<script type="module" src="notificacoes.js"></script>
+</body>
+</html>

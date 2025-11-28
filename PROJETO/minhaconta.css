@@ -1,0 +1,730 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* --- CABEÇALHO --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #2729af;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    background-color: #2729af;
+    padding: 5px 15px;
+    border-radius: 20px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#greeting-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.menu-icon {
+    color: #ffffff;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.conta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.conta-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* --- CARD DE PERFIL --- */
+.perfil-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.perfil-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.foto-grande-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.foto-perfil-grande {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2729af;
+}
+
+.btn-editar-foto-grande {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #2729af;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-editar-foto-grande:hover {
+    background-color: #1c1b80;
+    transform: scale(1.1);
+}
+
+.perfil-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* --- FORMULÁRIO --- */
+.form-dados {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2729af;
+    box-shadow: 0 0 0 3px rgba(39, 41, 175, 0.1);
+    outline: none;
+}
+
+.form-group input:read-only {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-cancelar,
+.btn-salvar {
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-cancelar {
+    background-color: #fff;
+    color: #E34F4F;
+    border: 2px solid #E34F4F;
+}
+
+.btn-cancelar:hover {
+    background-color: #fff5f5;
+}
+
+.btn-salvar {
+    background-color: #2729af;
+    color: white;
+}
+
+.btn-salvar:hover {
+    background-color: #1c1b80;
+    transform: translateY(-2px);
+}
+
+/* --- LINKS RÁPIDOS --- */
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quick-link-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.quick-link-card > i:first-child {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2729af 0%, #1c1b80 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+}
+
+.quick-link-card > div {
+    flex-grow: 1;
+}
+
+.quick-link-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.quick-link-card p {
+    font-size: 12px;
+    color: #666;
+}
+
+.quick-link-card > i:last-child {
+    color: #2729af;
+    font-size: 20px;
+}
+
+/* --- SIDEBAR PERFIL (Estilo Unificado) --- */
+/* --- SIDEBAR (REDESENHADA) --- */
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    
+    /* MUDANÇAS AQUI PARA TIRAR A BARRA */
+    overflow-y: auto;       /* Permite rolar se necessário */
+    overflow-x: hidden;     /* Bloqueia rolagem horizontal */
+    scrollbar-width: none;  /* Esconde a barra no Firefox */
+}
+
+/* Esconde a barra no Chrome, Safari e Edge */
+.sidebar-perfil::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, #2729af, #1c1b80); /* Gradiente no header */
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 30px; /* Curva moderna no final do header */
+    border-bottom-right-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.3); /* Borda translúcida */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu {
+    padding: 10px 15px; /* Espaçamento lateral para os botões não encostarem */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre os itens */
+}
+
+/* Item do menu estilo "Pílula" */
+.sidebar-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px; /* Bordas arredondadas nos itens */
+}
+
+.sidebar-item:hover {
+    background-color: #f0f7ff; /* Fundo azul bem clarinho */
+    color: #2729af; /* Texto azul */
+    transform: translateX(5px); /* Move levemente para a direita */
+}
+
+.sidebar-item i {
+    width: 25px;
+    text-align: center;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.sidebar-item:hover i {
+    color: #2729af;
+}
+
+.sidebar-item.active {
+    background-color: #e6f0ff;
+    color: #2729af;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 41, 175, 0.1); /* Sombra suave no ativo */
+    border-left: none; /* Remove a borda antiga */
+}
+
+.sidebar-item.active i {
+    color: #2729af;
+}
+
+/* Área de Sair */
+.sidebar-sair {
+    margin: 20px 15px 30px 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-sair .sidebar-item:hover {
+    background-color: #fff5f5; /* Vermelho bem claro */
+    color: #d32f2f;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-perfil.ativo {
+    right: 0;
+}
+
+.sidebar-header {
+    background-color: #2729af;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-fechar-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-fechar-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-foto-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sidebar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.sidebar-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-editar-foto i {
+    color: #2729af;
+    font-size: 14px;
+}
+
+.sidebar-nome {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar-item:hover {
+    background-color: #D0D0D0;
+}
+
+.sidebar-item.active {
+    background-color: #D0D0D0;
+    border-left: 4px solid #2729af;
+    font-weight: bold;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.sidebar-sair {
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+}
+
+.sidebar-sair .sidebar-item {
+    color: #d32f2f;
+}
+
+.sidebar-sair .sidebar-item i {
+    color: #d32f2f;
+}
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: #001A4E;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .conta-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-links {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .conta-content {
+        padding: 20px 15px;
+    }
+
+    .perfil-card {
+        padding: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-cancelar,
+    .btn-salvar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .quick-links {
+        flex-direction: column;
+    }
+}
+
+
+/* ========================================================= */
+/* --- MODO DE ALTO CONTRASTE (MINHA CONTA) --- */
+/* ========================================================= */
+
+body.daltonismo-mode {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/* 1. Estrutura Principal */
+body.daltonismo-mode .header,
+body.daltonismo-mode .rodape,
+body.daltonismo-mode .sidebar-perfil {
+    background-color: #000000 !important;
+    border-color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .page-title {
+    color: #FFFF00 !important; /* Título da página em Amarelo Destaque */
+}
+
+/* 2. CARD DE PERFIL E LINKS RÁPIDOS (Estilo Marca-Texto) */
+/* Fundo Amarelo com Letras Pretas, igual você pediu na Home */
+body.daltonismo-mode .perfil-card,
+body.daltonismo-mode .quick-link-card {
+    background-color: #FFFF00 !important;
+    border: 4px solid #FFFFFF !important; /* Borda branca grossa para separar do fundo preto */
+    box-shadow: none !important;
+}
+
+/* Textos dentro dos cards devem ser PRETOS para ler no fundo amarelo */
+body.daltonismo-mode .perfil-header h2,
+body.daltonismo-mode .form-group label,
+body.daltonismo-mode .quick-link-card h3,
+body.daltonismo-mode .quick-link-card p,
+body.daltonismo-mode .quick-link-card i {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* 3. FORMULÁRIOS (INPUTS) */
+/* Campos pretos para contrastar com o card amarelo */
+body.daltonismo-mode input,
+body.daltonismo-mode select {
+    background-color: #000000 !important; /* Fundo do input Preto */
+    color: #FFFF00 !important; /* Texto digitado Amarelo */
+    border: 2px solid #000000 !important;
+}
+
+body.daltonismo-mode input:focus, 
+body.daltonismo-mode select:focus {
+    border-color: #FFFFFF !important; /* Borda branca ao clicar */
+}
+
+/* Campo "somente leitura" (ex: CPF) */
+body.daltonismo-mode input:read-only {
+    background-color: #333333 !important; /* Cinza escuro */
+    color: #CCCCCC !important;
+}
+
+/* 4. BOTÕES */
+body.daltonismo-mode .btn-salvar {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+    border: 2px solid #000000 !important;
+}
+
+body.daltonismo-mode .btn-cancelar {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+body.daltonismo-mode .btn-editar-foto-grande {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+/* 5. SIDEBAR (Menu Lateral) - Igual às outras telas */
+body.daltonismo-mode .sidebar-item {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .sidebar-item:hover,
+body.daltonismo-mode .sidebar-item.active {
+    background-color: #333333 !important;
+    color: #FFFF00 !important;
+    border: 1px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .sidebar-item i {
+    color: #FFFF00 !important;
+}
+
+/* Imagens */
+body.daltonismo-mode img {
+    filter: grayscale(100%) contrast(120%);
+}
+
+/* Correção para a foto de perfil não ficar cinza demais */
+body.daltonismo-mode .foto-perfil-grande {
+    border-color: #000000 !important;
+}

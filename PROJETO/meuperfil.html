@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - DAD.br</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="meuperfil.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="telainicial.html">
+                <img src="imagens/DADNO.png" alt="Logo DAD" class="back-logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="telainicial.html">Home</a>
+             <a href="#" id="toggle-alto-contraste">Alto Contraste</a> 
+            <a href="#">Quem somos?</a>
+        </nav>
+        
+        <div class="user-profile">
+             <div class="notification-anchor">
+            <i class="fa-solid fa-bell notificacao"></i>
+            </div>
+            <link rel="stylesheet" href="notificacoes.css">
+            <div class="menu-container">
+                <div class="profile-info"> 
+                    <img src="imagens/usuario.png" alt="Foto de Perfil" class="profile-pic">
+                    <span id="greeting-name">Olá!</span>
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="perfil-content">
+        <div class="perfil-header-section">
+            <div class="perfil-header-top">
+            
+                <button class="btn-historico" onclick="window.location.href='historicodoacao.html'">
+                    <i class="fa-solid fa-lock"></i> Histórico de Doações
+                </button>
+                 <button class="btn-historico" onclick="window.location.href='historicodoacao.html'">
+                    <i class="fa-solid fa-lock"></i> ONG's Favoritas
+                </button>
+            </div>
+
+            <div class="perfil-info-container">
+                <div class="perfil-foto-nome">
+                    <div class="perfil-foto-wrapper">
+                        <img src="imagens/usuario.png" alt="Foto de Perfil" class="perfil-foto" id="perfil-foto">
+                    </div>
+                    <h2 class="perfil-nome" id="perfil-nome">Carregando...</h2>
+                </div>
+
+                <div class="perfil-stats">
+    <div class="stat">
+        <span class="stat-number" id="num-seguidores">0</span>
+        <span class="stat-label">Seguidores</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number" id="num-seguindo">0</span>
+        <span class="stat-label">Seguindo</span>
+    </div>
+    <div class="stat">
+        <span class="stat-number" id="num-doacoes">0</span>
+        <span class="stat-label">Doações</span>
+    </div>
+</div>
+                <div class="perfil-actions">
+                    <button class="btn-action btn-editar" id="btn-abrir-modal">
+                        <i class="fa-solid fa-pen-to-square"></i> Editar Perfil
+                    </button>
+                </div>
+
+                <div class="perfil-descricao">
+                    <h3>Descrição</h3>
+                    <p id="perfil-bio">Sem descrição.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="postagens-section">
+            <div class="postagens-header">
+                <h2>Postagens</h2>
+                <button class="btn-fazer-postagem">
+                    <i class="fa-solid fa-plus"></i> Fazer postagem
+                </button>
+            </div>
+
+            <div class="postagens-grid" id="postagens-grid">
+                </div>
+        </section>
+    </main>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto">
+                <div class="sidebar-editar-foto">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+        
+        <nav class="sidebar-menu">
+
+            <a href="telainicial.html" class="sidebar-item">
+        <i class="fa-solid fa-house"></i> <span>Tela Inicial</span>
+                </a>
+            <a href="minhaconta.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Minha conta</span>
+            </a>
+            <a href="meuperfil.html" class="sidebar-item active">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Meu Perfil</span>
+            </a>
+            <a href="historicodoacao.html" class="sidebar-item">
+                <i class="fa-solid fa-history"></i>
+                <span>Histórico de Doações</span>
+            </a>
+            <a href="ongsfavoritas.html" class="sidebar-item">
+                <i class="fa-solid fa-heart"></i>
+                <span>ONGs Favoritas</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Contatos</span>
+            </a>
+            <a href="todasongs.html" class="sidebar-item"><i class="fa-solid fa-list"></i> <span>Todas as ONGs</span></a>
+        </nav>
+        
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <div id="modal-editar" class="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Perfil Público</h3>
+                <button id="btn-fechar-modal" class="btn-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="form-editar-perfil">
+                <div class="form-group">
+                    <label for="edit-nome">Nome de Exibição:</label>
+                    <input type="text" id="edit-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-bio">Descrição (Bio):</label>
+                    <textarea id="edit-bio" name="descricao" rows="4" placeholder="Conte um pouco sobre você..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-salvar-modal">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-postagem" class="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nova Publicação</h3>
+                <button id="btn-fechar-postagem" class="btn-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="form-criar-post">
+                <div class="form-group">
+                    <label for="post-imagem-input">Escolha uma foto:</label>
+                    <input type="file" id="post-imagem-input" accept="image/*" required>
+                    <div style="margin-top: 10px; text-align: center;">
+                        <img id="preview-post" src="" style="max-width: 100%; max-height: 200px; display: none; border-radius: 8px; border: 1px solid #ddd;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="post-descricao">Legenda:</label>
+                    <textarea id="post-descricao" name="descricao" rows="3" placeholder="O que você quer compartilhar?" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-salvar-modal">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <footer>
+        <div class="rodape">
+            <p>DAD.br</p>
+        </div>
+    </footer>
+
+   <script type="module" src="config.js"></script>
+
+    <script type="module" src="meuperfil.js"></script>
+    <script type="module" src="notificacoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="telalogin.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="logo">
+            <img src="imagens/governo-federal-removebg-preview.png" alt="Logo Governo Federal">
+        </div>
+    <div class="opcoes">
+
+        <a href="#" id="toggle-alto-contraste">Alto Contraste</a> 
+        <button class="botao-azul">Entrar com GOV.br</button>
+    </div>
+</header>
+    
+
+    <main class="conteudo">
+        <div class="imagens">
+            <img src="imagens/campanhap2.jpeg" alt="Imagem 2">
+        </div>
+
+        <div class="login-box">
+             <i class="fa-solid fa-circle-question ajuda" title="Precisa de ajuda?"></i>
+            <img class="logo-dad" src="imagens/DADNO.png" alt="Logo DAD">
+            <h2>Entrar na conta</h2>
+
+            <form id="formLogin">
+                
+                <label for="cpf">Insira seu CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+
+                <label for="senha">Insira sua senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+                <div id="mensagem-status-login" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+
+                <div class="botoes">
+                    <a href="telacadastro.html" class="criar">Criar conta</a>
+                    
+                    <button type="submit" class="entrar">Entrar</button>
+                    
+                    </div>
+
+                <a href="#" class="esqueceu">Esqueceu sua senha?</a>
+            </form>
+        </div>
+    </main>
+
+     <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <footer>
+        <div class="rodape">
+            <p>DAD.br</p>
+        </div>
+    </footer>
+
+    
+<script type="module" src="config.js"></script>
+<script type="module" src="login.js"></script> </body>
+
+</html>

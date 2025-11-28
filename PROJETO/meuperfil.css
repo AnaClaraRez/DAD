@@ -1,0 +1,922 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* --- CABEÇALHO (IGUAL ÀS OUTRAS PÁGINAS) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    background-color: #2729af;
+    padding: 5px 15px;
+    border-radius: 20px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#greeting-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.menu-icon {
+    color: #ffffff;
+}
+
+/* --- CONTEÚDO DO PERFIL --- */
+.perfil-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.perfil-header-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.perfil-header-top {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-denuncia,
+.btn-historico {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-denuncia {
+    background-color: #fff;
+    color: #E34F4F;
+    border: 2px solid #E34F4F;
+}
+
+.btn-denuncia:hover {
+    background-color: #fff5f5;
+}
+
+.btn-historico {
+    background-color: #f0f7ff;
+    color: #2729af;
+    border: 2px solid #2729af;
+}
+
+.btn-historico:hover {
+    background-color: #e3f2fd;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.perfil-info-container {
+    display: grid;
+    gap: 30px;
+}
+
+.perfil-foto-nome {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.perfil-foto-wrapper {
+    flex-shrink: 0;
+}
+
+.perfil-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2729af;
+}
+
+.perfil-nome {
+    font-size: 28px;
+    color: #333;
+}
+
+.perfil-stats {
+    display: flex;
+    gap: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.perfil-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-action {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-seguir {
+    background-color: #2729af;
+    color: white;
+    border: none;
+}
+
+.btn-seguir:hover {
+    background-color: #1c1b80;
+}
+
+.btn-mensagem {
+    background-color: white;
+    color: #2729af;
+    border: 2px solid #2729af;
+}
+
+.btn-mensagem:hover {
+    background-color: #f0f7ff;
+}
+
+.btn-email {
+    background-color: white;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+.btn-email:hover {
+    background-color: #f5f5f5;
+}
+
+.perfil-descricao {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.perfil-descricao h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.perfil-descricao p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- SEÇÃO DE POSTAGENS --- */
+.postagens-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.postagens-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.postagens-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.btn-fazer-postagem {
+    background-color: #2729af;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-fazer-postagem:hover {
+    background-color: #1c1b80;
+    transform: translateY(-2px);
+}
+
+.postagens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.post-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.post-item:hover {
+    transform: scale(1.05);
+}
+
+.post-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.empty-posts {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.empty-posts i {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.empty-posts h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* --- AJUSTE DO PREVIEW DE IMAGEM NO MODAL --- */
+#preview-post {
+    width: 100%;
+    height: 250px; /* Altura fixa para ficar elegante */
+    object-fit: cover; /* Corta a imagem para preencher sem esticar */
+    border-radius: 12px;
+    border: 2px dashed #ccc;
+    display: none; /* Oculto por padrão */
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Input de arquivo mais bonito */
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* --- SIDEBAR (IGUAL ÀS OUTRAS) --- */
+/* --- SIDEBAR (REDESENHADA) --- */
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    
+    /* MUDANÇAS AQUI PARA TIRAR A BARRA */
+    overflow-y: auto;       /* Permite rolar se necessário */
+    overflow-x: hidden;     /* Bloqueia rolagem horizontal */
+    scrollbar-width: none;  /* Esconde a barra no Firefox */
+}
+
+/* Esconde a barra no Chrome, Safari e Edge */
+.sidebar-perfil::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, #2729af, #1c1b80); /* Gradiente no header */
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 30px; /* Curva moderna no final do header */
+    border-bottom-right-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.3); /* Borda translúcida */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu {
+    padding: 10px 15px; /* Espaçamento lateral para os botões não encostarem */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre os itens */
+}
+
+/* Item do menu estilo "Pílula" */
+.sidebar-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px; /* Bordas arredondadas nos itens */
+}
+
+.sidebar-item:hover {
+    background-color: #f0f7ff; /* Fundo azul bem clarinho */
+    color: #2729af; /* Texto azul */
+    transform: translateX(5px); /* Move levemente para a direita */
+}
+
+.sidebar-item i {
+    width: 25px;
+    text-align: center;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.sidebar-item:hover i {
+    color: #2729af;
+}
+
+.sidebar-item.active {
+    background-color: #e6f0ff;
+    color: #2729af;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 41, 175, 0.1); /* Sombra suave no ativo */
+    border-left: none; /* Remove a borda antiga */
+}
+
+.sidebar-item.active i {
+    color: #2729af;
+}
+
+/* Área de Sair */
+.sidebar-sair {
+    margin: 20px 15px 30px 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-sair .sidebar-item:hover {
+    background-color: #fff5f5; /* Vermelho bem claro */
+    color: #d32f2f;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-perfil.ativo {
+    right: 0;
+}
+
+.sidebar-header {
+    background-color: #2729af;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-fechar-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-fechar-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-foto-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sidebar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.sidebar-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-editar-foto i {
+    color: #2729af;
+    font-size: 14px;
+}
+
+.sidebar-nome {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar-item:hover {
+    background-color: #D0D0D0;
+}
+
+.sidebar-item.active {
+    background-color: #D0D0D0;
+    border-left: 4px solid #2729af;
+    font-weight: bold;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.sidebar-sair {
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+}
+
+.sidebar-sair .sidebar-item {
+    color: #d32f2f;
+}
+
+.sidebar-sair .sidebar-item i {
+    color: #d32f2f;
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: #001A4E;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .perfil-content {
+        padding: 20px 15px;
+    }
+
+    .perfil-header-section {
+        padding: 20px;
+    }
+
+    .perfil-foto-nome {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .perfil-stats {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .perfil-actions {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .postagens-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --- ESTILOS DO MODAL E EDIÇÃO --- */
+
+/* Botão Editar */
+.btn-editar {
+    background-color: #2729af;
+    color: white;
+    border: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-editar:hover {
+    background-color: #1c1b80;
+    transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-container.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.modal-container.ativo .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Formulário do Modal */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-salvar-modal {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-salvar-modal:hover {
+    background-color: #45a049;
+}
+
+/* ========================================================= */
+/* --- MODO DE ALTO CONTRASTE (MEU PERFIL) --- */
+/* ========================================================= */
+
+body.daltonismo-mode {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/* 1. Estrutura Principal */
+body.daltonismo-mode .header,
+body.daltonismo-mode .rodape,
+body.daltonismo-mode .sidebar-perfil {
+    background-color: #000000 !important;
+    border-color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .page-title {
+    color: #FFFF00 !important; /* Título principal amarelo */
+}
+
+/* 2. CARTÕES PRINCIPAIS (Perfil e Postagens) */
+/* Fundo Amarelo com Letras Pretas para destaque máximo */
+body.daltonismo-mode .perfil-header-section,
+body.daltonismo-mode .postagens-section {
+    background-color: #FFFF00 !important;
+    border: 4px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+/* 3. TEXTOS DENTRO DOS CARTÕES (DEVEM SER PRETOS) */
+body.daltonismo-mode .perfil-nome,
+body.daltonismo-mode .stat-number,
+body.daltonismo-mode .stat-label,
+body.daltonismo-mode .postagens-header h2,
+body.daltonismo-mode h3 {
+    color: #000000 !important;
+    font-weight: 900 !important;
+}
+
+/* 4. CAIXA DE DESCRIÇÃO (BIO) */
+/* Vamos deixar branca para separar do fundo amarelo */
+body.daltonismo-mode .perfil-descricao {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+body.daltonismo-mode .perfil-descricao h3,
+body.daltonismo-mode .perfil-descricao p {
+    color: #000000 !important;
+}
+
+/* 5. BOTÕES */
+/* Botões de Ação (Editar, Histórico, Fazer Postagem) */
+body.daltonismo-mode .btn-editar,
+body.daltonismo-mode .btn-fazer-postagem,
+body.daltonismo-mode .btn-historico {
+    background-color: #000000 !important;
+    color: #FFFF00 !important; /* Texto Amarelo */
+    border: 2px solid #000000 !important;
+}
+
+/* Ícones dentro dos botões */
+body.daltonismo-mode .btn-editar i,
+body.daltonismo-mode .btn-fazer-postagem i,
+body.daltonismo-mode .btn-historico i {
+    color: #FFFF00 !important;
+}
+
+/* 6. MODAIS (Pop-ups de Edição e Postagem) */
+body.daltonismo-mode .modal-content {
+    background-color: #000000 !important; /* Fundo do modal preto */
+    border: 4px solid #FFFF00 !important; /* Borda amarela */
+}
+
+body.daltonismo-mode .modal-header h3,
+body.daltonismo-mode .form-group label {
+    color: #FFFF00 !important;
+}
+
+body.daltonismo-mode .btn-close {
+    color: #FFFF00 !important;
+}
+
+/* Campos de Texto (Inputs) no Modal */
+body.daltonismo-mode input,
+body.daltonismo-mode textarea {
+    background-color: #333333 !important;
+    color: #FFFF00 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+/* 7. IMAGENS */
+body.daltonismo-mode img {
+    filter: grayscale(100%) contrast(120%);
+}
+
+/* Garante que a foto de perfil tenha borda preta para não sumir no amarelo */
+body.daltonismo-mode .perfil-foto {
+    border-color: #000000 !important;
+}
+
+/* 8. SIDEBAR (Menu Lateral) */
+body.daltonismo-mode .sidebar-item {
+    color: #FFFFFF !important;
+}
+
+body.daltonismo-mode .sidebar-item:hover,
+body.daltonismo-mode .sidebar-item.active {
+    background-color: #333333 !important;
+    color: #FFFF00 !important;
+    border: 1px solid #FFFF00 !important;
+}
+
+body.daltonismo-mode .sidebar-item i {
+    color: #FFFF00 !important;
+}

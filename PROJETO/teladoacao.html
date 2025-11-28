@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Doação - DAD.br</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="telainicial.css" />
+    <link rel="stylesheet" href="teladoacao.css" />
+</head>
+
+<body>
+    <header class="topo-inicial">
+        <div class="logo">
+            <img src="imagens/DADNO.png" alt="Logo DAD - Doações Arrecadações e Distribuições" />
+        </div>
+        <nav class="opcoes-inicial">
+            <a href="telainicial.html">Home</a>
+            <a href="#" id="toggle-alto-contraste">Alto Contraste</a>
+            <a href="#">Quem somos?</a>
+        </nav>
+        <div class="perfil">
+            <link rel="stylesheet" href="notificacoes.css" />
+            <div class="container-notificacao" style="position: relative;">
+                <i class="fa-solid fa-bell notificacao"></i>
+            </div>
+
+            <div class="usuario">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" id="foto-usuario" class="foto-perfil" />
+                <span class="nome-usuario" id="nome-usuario">Olá, Usuário</span>
+                <i class="fa-solid fa-bars menu-perfil"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo-doacao">
+        <div class="container-doacao">
+
+            <section class="secao-doacao">
+                <h2 class="titulo-secao">Doar para ONG</h2>
+
+                <div class="info-ong">
+                    <img src="imagens/pet-lovers-logo.png" alt="Logo Pet Lovers" class="ong-logo-pequena" />
+                    <div class="ong-detalhes">
+                        <div class="nome-verificado">
+                            <h3 class="nome-ong">Pet Lovers</h3>
+                            <i class="fa-solid fa-circle-check verificacao-icon"></i>
+                        </div>
+                        <p class="data-doacao">19/11/25</p>
+                    </div>
+                </div>
+
+                <div class="endereco-ong">
+                    <p><i class="fa-solid fa-location-dot"></i> (Brasil) Brasília - DF (Taguatinga Norte)</p>
+                    <p class="rua-endereco">Rua 14A.</p>
+                </div>
+
+                <form class="formulario-valor">
+                    <label for="input-valor-doacao">Valor:</label>
+                    <input type="text" id="input-valor-doacao" name="valor" placeholder="R$ 0,00" class="input-doacao"
+                        inputmode="decimal" />
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" class="input-doacao" />
+
+                    <button type="button" class="btn-mensagem">Mensagem</button>
+                </form>
+            </section>
+
+            <section class="secao-pagamento">
+                <h2 class="titulo-secao">Forma de pagamento</h2>
+
+                <!-- NOVA ESTRUTURA: cada opção é um "card" com detalhes internos -->
+                <div class="opcoes-pagamento">
+
+                    <div class="opcao-pagamento" data-payment="credito">
+                        <label class="opcao-radio">
+                            <input type="radio" name="forma_pagamento" value="Cartão de Crédito" checked />
+                            <span><i class="fa-solid fa-credit-card"></i> Cartão de crédito</span>
+                        </label>
+                        <div class="detalhes-pagamento" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="opcao-pagamento" data-payment="paypal">
+                        <label class="opcao-radio">
+                            <input type="radio" name="forma_pagamento" value="PayPal" />
+                            <span><i class="fa-brands fa-paypal"></i> PayPal</span>
+                        </label>
+                        <div class="detalhes-pagamento" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="opcao-pagamento" data-payment="boleto">
+                        <label class="opcao-radio">
+                            <input type="radio" name="forma_pagamento" value="Boleto" />
+                            <span><i class="fa-solid fa-barcode"></i> Boleto</span>
+                        </label>
+                        <div class="detalhes-pagamento" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="opcao-pagamento" data-payment="picpay">
+                        <label class="opcao-radio">
+                            <input type="radio" name="forma_pagamento" value="PicPay" />
+                            <span><img src="imagens/picpay-logo.png" alt="PicPay Logo" class="logo-pagamento" /> PicPay</span>
+                        </label>
+                        <div class="detalhes-pagamento" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="opcao-pagamento" data-payment="applepay">
+                        <label class="opcao-radio">
+                            <input type="radio" name="forma_pagamento" value="Apple Pay" />
+                            <span><i class="fa-brands fa-apple-pay"></i> Apple Pay</span>
+                        </label>
+                        <div class="detalhes-pagamento" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="opcao-pagamento" data-payment="googlepay">
+                        <label class="opcao-radio">
+                            <input type="radio" name="forma_pagamento" value="Google Pay" />
+                            <span><i class="fa-brands fa-google-pay"></i> Google Pay</span>
+                        </label>
+                        <div class="detalhes-pagamento" aria-hidden="true"></div>
+                    </div>
+
+                </div>
+
+                <button type="button" id="btn-confirmar-doacao" class="btn-fazer-doacao">Fazer Doação</button>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <p>DAD.br</p>
+        </div>
+    </footer>
+
+    <!-- SIDEBAR PERFIL -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar-perfil" id="sidebar-perfil">
+        <div class="sidebar-header">
+            <button class="btn-fechar-sidebar" id="btn-fechar-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="sidebar-foto-container">
+                <img src="imagens/usuario.png" alt="Foto de Perfil" class="sidebar-foto" id="sidebar-foto" />
+                <div class="sidebar-editar-foto">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+            <h3 class="sidebar-nome" id="sidebar-nome">Olá!</h3>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="telainicial.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i> <span>Tela Inicial</span>
+            </a>
+
+            <a href="minhaconta.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Minha conta</span>
+            </a>
+
+            <a href="meuperfil.html" class="sidebar-item">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Meu Perfil</span>
+            </a>
+
+            <a href="historicodoacao.html" class="sidebar-item">
+                <i class="fa-solid fa-history"></i>
+                <span>Histórico de Doações</span>
+            </a>
+
+            <a href="ongsfavoritas.html" class="sidebar-item">
+                <i class="fa-solid fa-heart"></i>
+                <span>ONGs Favoritas</span>
+            </a>
+
+            <a href="chat.html" class="sidebar-item">
+                <i class="fa-solid fa-comments"></i>
+                <span>Mensagens</span>
+            </a>
+            <a href="todasongs.html" class="sidebar-item"><i class="fa-solid fa-list"></i> <span>Todas as ONGs</span></a>
+        </nav>
+
+        <div class="sidebar-sair">
+            <a href="index.html" class="sidebar-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+ <script type="module" src="config.js"></script>
+
+    <script type="module" src="teladoacao.js"></script>
+    <script type="module" src="notificacoes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,602 @@
+/* --- ESTILOS GERAIS DA TELA DE DOAÇÃO --- */
+.conteudo-doacao {
+    padding: 40px;
+    background-color: #f8f8f8;
+    min-height: calc(100vh - 120px); /* Altura mínima para preencher a tela */
+}
+
+.container-doacao {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Estilos para as duas colunas principais */
+.secao-doacao, .secao-pagamento {
+    padding: 30px;
+}
+
+.secao-doacao {
+    flex: 1; /* Ocupa 50% */
+    border-right: 1px solid #eee;
+}
+
+.secao-pagamento {
+    flex: 1; /* Ocupa 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o botão de doação para baixo */
+}
+
+.titulo-secao {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2729af; /* Linha de destaque para o título */
+    width: fit-content;
+}
+
+/* --- SEÇÃO DOAR PARA ONG --- */
+.info-ong {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+
+.ong-logo-pequena {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: contain;
+    padding: 5px;
+    background-color: #f0f0f0;
+}
+
+.ong-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nome-verificado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nome-ong {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.verificacao-icon {
+    color: #2729af;
+    font-size: 16px;
+}
+
+.data-doacao {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.endereco-ong {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.endereco-ong i {
+    color: #2729af;
+    margin-right: 5px;
+}
+
+.rua-endereco {
+    margin-left: 20px; /* Alinha com o texto da localização */
+    font-size: 14px;
+    color: #666;
+}
+
+/* Formulário de Valor */
+.formulario-valor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-valor label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.input-doacao {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-doacao:focus {
+    border-color: #2729af;
+    box-shadow: 0 0 0 3px rgba(39, 41, 175, 0.2);
+    outline: none;
+}
+
+.btn-mensagem {
+    background-color: #fff;
+    color: #2729af;
+    border: 1px solid #2729af;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.2s, color 0.2s;
+    max-width: 150px; /* Conforme a imagem de referência */
+}
+
+.btn-mensagem:hover {
+    background-color: #2729af;
+    color: #fff;
+}
+
+/* --- SEÇÃO FORMA DE PAGAMENTO --- */
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1; /* Ocupa o espaço restante antes do botão */
+    margin-bottom: 30px;
+}
+
+.opcao-radio {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.opcao-radio:hover {
+    background-color: #f5f5f5;
+}
+
+.opcao-radio input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #999;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.opcao-radio input[type="radio"]:checked {
+    border-color: #2729af;
+}
+
+.opcao-radio input[type="radio"]:checked::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #2729af;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.opcao-radio span {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opcao-radio span i, .opcao-radio span .logo-pagamento {
+    font-size: 20px;
+    width: 25px; /* Para alinhar os ícones/logos */
+    text-align: center;
+}
+
+.logo-pagamento {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Botão Fazer Doação */
+.btn-fazer-doacao {
+    background-color: #2729af;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.2s, transform 0.2s;
+    align-self: flex-end; /* Alinha o botão à direita na coluna de pagamento */
+}
+
+.btn-fazer-doacao:hover {
+    background-color: #1a1b80;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SIDEBAR (REDESENHADA) --- */
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    
+    /* MUDANÇAS AQUI PARA TIRAR A BARRA */
+    overflow-y: auto;       /* Permite rolar se necessário */
+    overflow-x: hidden;     /* Bloqueia rolagem horizontal */
+    scrollbar-width: none;  /* Esconde a barra no Firefox */
+}
+
+/* Esconde a barra no Chrome, Safari e Edge */
+.sidebar-perfil::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, #2729af, #1c1b80); /* Gradiente no header */
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 30px; /* Curva moderna no final do header */
+    border-bottom-right-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.3); /* Borda translúcida */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu {
+    padding: 10px 15px; /* Espaçamento lateral para os botões não encostarem */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre os itens */
+}
+
+/* Item do menu estilo "Pílula" */
+.sidebar-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px; /* Bordas arredondadas nos itens */
+}
+
+.sidebar-item:hover {
+    background-color: #f0f7ff; /* Fundo azul bem clarinho */
+    color: #2729af; /* Texto azul */
+    transform: translateX(5px); /* Move levemente para a direita */
+}
+
+.sidebar-item i {
+    width: 25px;
+    text-align: center;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.sidebar-item:hover i {
+    color: #2729af;
+}
+
+.sidebar-item.active {
+    background-color: #e6f0ff;
+    color: #2729af;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 41, 175, 0.1); /* Sombra suave no ativo */
+    border-left: none; /* Remove a borda antiga */
+}
+
+.sidebar-item.active i {
+    color: #2729af;
+}
+
+/* Área de Sair */
+.sidebar-sair {
+    margin: 20px 15px 30px 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-sair .sidebar-item:hover {
+    background-color: #fff5f5; /* Vermelho bem claro */
+    color: #d32f2f;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-perfil {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-perfil.ativo {
+    right: 0;
+}
+
+.sidebar-header {
+    background-color: #2729af;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.btn-fechar-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-fechar-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-foto-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sidebar-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.sidebar-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-editar-foto i {
+    color: #2729af;
+    font-size: 14px;
+}
+
+.sidebar-nome {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar-item:hover {
+    background-color: #D0D0D0;
+}
+
+.sidebar-item.active {
+    background-color: #D0D0D0;
+    border-left: 4px solid #2729af;
+    font-weight: bold;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.sidebar-sair {
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+}
+
+.sidebar-sair .sidebar-item {
+    color: #d32f2f;
+}
+
+.sidebar-sair .sidebar-item i {
+    color: #d32f2f;
+}
+
+/* ===============================
+   ACCORDION DOS MÉTODOS DE PAGAMENTO
+   Design A — Clean Moderno
+=============================== */
+
+.accordion-pagamento {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-top: 12px;
+    padding: 0 18px;
+    border: 1px solid #e5e5e5;
+
+    /* Animação suave */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        padding 0.25s ease;
+}
+
+.accordion-pagamento .campo {
+    margin-bottom: 18px;
+}
+
+.accordion-pagamento label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.accordion-pagamento input {
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    background: #fafafa;
+    transition: border-color 0.2s ease;
+}
+
+.accordion-pagamento input:focus {
+    border-color: #4676E8;
+    outline: none;
+    background: #fff;
+}
+
+.accordion-pagamento .dupla {
+    display: flex;
+    gap: 12px;
+}
+
+.texto-info {
+    padding: 12px 0;
+    font-size: 15px;
+    color: #444;
+}
+
+/* Quando a aba expande */
+.accordion-pagamento.show {
+    padding: 18px;
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .container-doacao {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .secao-doacao {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .secao-pagamento {
+        padding-top: 20px;
+    }
+    
+    .btn-fazer-doacao {
+        width: 100%;
+        align-self: center;
+    }
+
+    .conteudo-doacao {
+        padding: 20px;
+    }
+}
